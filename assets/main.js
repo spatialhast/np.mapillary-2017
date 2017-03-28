@@ -113,7 +113,7 @@ function initLayers() {
 
     var mapillaryCoverage = {
         type: 'vector',
-        tiles: ['http://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt'],
+        tiles: ['https://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt'],
         minzoom: 2,
         maxzoom: 14
     };
