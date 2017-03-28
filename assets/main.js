@@ -4,9 +4,7 @@ $("#list-btn").click(function () {
     return false;
 });
 
-$.get('data/upd.json', function (data) {
-    document.getElementById('updInfo').innerHTML = data;
-});
+$("#updInfo").load("data/upd.json");
 
 function placeNumber(value, row, index) {
     return 1 + index;
