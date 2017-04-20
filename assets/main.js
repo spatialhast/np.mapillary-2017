@@ -277,7 +277,11 @@ function initLayers() {
 
 };
 
-var mly = new Mapillary.Viewer('mly', 'WTlZaVBSWmxRX3dQODVTN2gxWVdGUTowNDlmNDBhNjRhYmM3ZmVl', p_key);
+var mly = new Mapillary.Viewer('mly', 'WTlZaVBSWmxRX3dQODVTN2gxWVdGUTowNDlmNDBhNjRhYmM3ZmVl', p_key, {
+    component: {
+        cover: false,
+    }
+});
 
 mly.on('nodechanged', function (node) {
     var lnglat = [node.latLon.lon, node.latLon.lat];
