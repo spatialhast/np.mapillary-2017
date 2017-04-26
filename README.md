@@ -5,9 +5,9 @@
 http://spatialhast.github.io/np.mapillary-2017/
 
 Cторінка на сайті OpenStreetMap Wiki
-http://wiki.openstreetmap.org/wiki/Uk:NP@Mapillary_2016
+https://wiki.openstreetmap.org/wiki/Uk:NP@Mapillary_2017
 
 Cторінка на форумі OpenStreetMap
-http://forum.openstreetmap.org/viewtopic.php?id=54547
+https://forum.openstreetmap.org/viewtopic.php?pid=642790#p642790
 
 ![Desktop](http://spatialhast.github.io/np.mapillary-2017/page.png)
