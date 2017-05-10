@@ -34,35 +34,32 @@ function panameReplace(value, row, index) {
     return pacontent.slice(0, -2);
 };
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiaGFzdCIsImEiOiJjaW8yb2J5b3kwMHg3dnZseTNoZ2JkbXllIn0.bd3CWy4tlOrSgX3g_PPi_w';
+//mapboxgl.accessToken = 'pk.eyJ1IjoiaGFzdCIsImEiOiJjaW8yb2J5b3kwMHg3dnZseTNoZ2JkbXllIn0.bd3CWy4tlOrSgX3g_PPi_w';
+mapboxgl.accessToken = 'pk.eyJ1IjoiaGFzdCIsImEiOiJIclZtZW1zIn0.iuIxiFsi-Am4bCEBzjFQaQ';
 
 if (!mapboxgl.supported()) {
     $("#warningModal").modal("show");
 } else {
     console.log('Your browser supported Mapbox GL');
-    $("#aboutModal").modal("show");
+    //$("#aboutModal").modal("show");
 };
 
 var pLocation = {
     "1": {
-        center: [36.242377, 50.056827],
-        p_key: '4PRDR8DUPLgDS7-hw6_utA'
+        center: [30.4637, 50.4504],
+        p_key: '-ufEmeSAixaqJ9LZpFymiA'
     },
     "2": {
-        center: [24.480444, 51.488236],
-        p_key: '52i8_YjbKJWpPZmbHGZqlg'
+        center: [30.4216, 50.4740],
+        p_key: '2GDRafBmQYuHK7rtcFYlGA'
     },
     "3": {
-        center: [24.675317, 51.548634],
-        p_key: 'QGWoGa28Dl9SGL3xWiznoQ'
+        center: [36.2433, 50.0742],
+        p_key: '8jrMyxOBgUhkmZodkd0WGA'
     },
     "4": {
-        center: [30.490125, 50.608115],
-        p_key: 'z3DwyBh92-VCUikjaTdzNQ'
-    },
-    "5": {
-        center: [23.846695, 51.481067],
-        p_key: 'Q2oMm_qooLxBf_vbw3XZvw'
+        center: [35.1921, 50.1210],
+        p_key: 'k2zzEGm8S7Zqis491VzQYw'
     }
 };
 
@@ -72,14 +69,15 @@ function randomInteger(min, max) {
     return rand;
 };
 
-var locNumber = randomInteger(1, 5);
+var locNumber = randomInteger(1, 3);
 
 var center = pLocation[locNumber].center,
     p_key = pLocation[locNumber].p_key;
 
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/light-v8',
+    //style: 'mapbox://styles/mapbox/light-v8',
+    style: 'mapbox://styles/hast/cj2jd5hz6001p2snpz7ayq0bi',
     center: center,
     zoom: 4
 });
@@ -111,30 +109,30 @@ map.on('style.load', function () {
 
 function initLayers() {
 
-    var mapillaryCoverage = {
-        type: 'vector',
-        tiles: ['https://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt'],
-        minzoom: 2,
-        maxzoom: 14
-    };
+    // var mapillaryCoverage = {
+    //     type: 'vector',
+    //     tiles: ['https://d25uarhxywzl1j.cloudfront.net/v0.1/{z}/{x}/{y}.mvt'],
+    //     minzoom: 2,
+    //     maxzoom: 14
+    // };
 
     // Mapillary coverage
-    map.addSource("mapillaryCoverage", mapillaryCoverage);
-    var mapillaryCoverageLine = {
-        "id": "mapillaryCoverageLine",
-        "type": "line",
-        "source": "mapillaryCoverage",
-        "source-layer": "mapillary-sequences",
-        "filter": [">", "captured_at", 1483221600000],
-        "layout": {
-            "visibility": "visible"
-        },
-        "paint": {
-            'line-opacity': 0.7,
-            'line-color': '#E88D00',
-            'line-width': 3
-        }
-    };
+    // map.addSource("mapillaryCoverage", mapillaryCoverage);
+    // var mapillaryCoverageLine = {
+    //     "id": "mapillaryCoverageLine",
+    //     "type": "line",
+    //     "source": "mapillaryCoverage",
+    //     "source-layer": "mapillary-sequences",
+    //     "filter": [">", "captured_at", 1483221600000],
+    //     "layout": {
+    //         "visibility": "visible"
+    //     },
+    //     "paint": {
+    //         'line-opacity': 0.7,
+    //         'line-color': '#E88D00',
+    //         'line-width': 3
+    //     }
+    // };
 
     // Mapillary coverage labels
     // map.addSource("mapillaryCoverageLabels", mapillaryCoverage);
@@ -159,47 +157,47 @@ function initLayers() {
     //     }
     // };
 
-    map.addLayer(mapillaryCoverageLine, 'sequences');
+    //map.addLayer(mapillaryCoverageLine, 'sequences');
     //map.addLayer(mapillaryCoverageLabels, 'sequencesLabels');
 
     // GeoJSON PZF layer
-    map.addSource('pzf', {
-        'type': 'geojson',
-        'data': 'data/pzf.geojson'
-    });
-    map.addLayer({
-        'id': 'pzfId',
-        'type': 'fill',
-        'source': 'pzf',
-        'layout': {
-            "visibility": "visible"
-        },
-        'paint': {
-            'fill-color': '#9ace00',
-            'fill-opacity': 0.3,
-            'fill-outline-color': '#AED540',
-        }
-    });
+    // map.addSource('pzf', {
+    //     'type': 'geojson',
+    //     'data': 'data/pzf.geojson'
+    // });
+    // map.addLayer({
+    //     'id': 'pzfId',
+    //     'type': 'fill',
+    //     'source': 'pzf',
+    //     'layout': {
+    //         "visibility": "visible"
+    //     },
+    //     'paint': {
+    //         'fill-color': '#9ace00',
+    //         'fill-opacity': 0.3,
+    //         'fill-outline-color': '#AED540',
+    //     }
+    // });
 
 
     // GeoJSON photos layer
-    map.addSource('photos', {
-        'type': 'geojson',
-        'data': 'data/photo_point.geojson'
-    });
-    map.addLayer({
-        'id': 'photos',
-        'type': 'circle',
-        'source': 'photos',
-        'layout': {
-            "visibility": "visible"
-        },
-        'paint': {
-            "circle-radius": 3,
-            "circle-color": "#004C00",
-            "circle-opacity": 0.2
-        }
-    });
+    // map.addSource('photos', {
+    //     'type': 'geojson',
+    //     'data': 'data/photo_point.geojson'
+    // });
+    // map.addLayer({
+    //     'id': 'photos',
+    //     'type': 'circle',
+    //     'source': 'photos',
+    //     'layout': {
+    //         "visibility": "visible"
+    //     },
+    //     'paint': {
+    //         "circle-radius": 3,
+    //         "circle-color": "#004C00",
+    //         "circle-opacity": 0.2
+    //     }
+    // });
 
     // photo position marker    
     map.addSource('markers', markerSource);
