@@ -41,7 +41,7 @@ if (!mapboxgl.supported()) {
     $("#warningModal").modal("show");
 } else {
     console.log('Your browser supported Mapbox GL');
-    //$("#aboutModal").modal("show");
+    $("#aboutModal").modal("show");
 };
 
 var pLocation = {
