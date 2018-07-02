@@ -35,7 +35,7 @@ function panameReplace(value, row, index) {
 };
 
 //mapboxgl.accessToken = 'pk.eyJ1IjoiaGFzdCIsImEiOiJjaW8yb2J5b3kwMHg3dnZseTNoZ2JkbXllIn0.bd3CWy4tlOrSgX3g_PPi_w';
-mapboxgl.accessToken = 'pk.eyJ1IjoiaGFzdCIsImEiOiJIclZtZW1zIn0.iuIxiFsi-Am4bCEBzjFQaQ';
+mapboxgl.accessToken = 'pk.eyJ1IjoiaGFzdCIsImEiOiJjamozeHF4aWswMDF3NDFrNWFnM25lY2I1In0.qet-_YLCdjKFyCdifNdZaQ';
 
 if (!mapboxgl.supported()) {
     $("#warningModal").modal("show");
